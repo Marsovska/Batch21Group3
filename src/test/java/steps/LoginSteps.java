@@ -14,16 +14,6 @@ import java.time.Duration;
 public class LoginSteps extends CommonMethods {
 
 
-    @When("the user enters valid admin credentials")
-    public void the_user_enters_valid_admin_credentials() {
-        sentText(ConfigReader.read("username"), loginPage.loginUsernameField);
-        sentText(ConfigReader.read("password"), loginPage.loginPasswordField);
-    }
-
-    @When("the user clicks the login button")
-    public void the_user_clicks_the_button() {
-        clickOnElement(loginPage.loginButton);
-    }
 
     @When("the user enters invalid username and valid password")
     public void the_user_enters_invalid_username_and_valid_password() {

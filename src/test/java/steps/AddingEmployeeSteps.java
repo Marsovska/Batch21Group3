@@ -27,12 +27,6 @@ public class AddingEmployeeSteps extends CommonMethods {
         clickOnElement(loginPage.loginButton);
     }
 
-    @Then("the user should be redirected to the admin {string} page")
-    public void the_user_should_be_redirected_to_the_admin_page(String dashboard) {
-        String expected = addingEmployeePage.dashboardPage.getText();
-        Assert.assertEquals(expected.toLowerCase(), dashboard.toLowerCase());
-    }
-
     @And("the user navigates to the PIM tab")
     public void the_user_navigates_to_the_pim_tab() {
         clickOnElement(addingEmployeePage.PIMTab);
