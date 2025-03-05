@@ -10,16 +10,16 @@ Feature: Creating Login details in HRMS Application
 
   @regression @positive_test
   Scenario: Admin creates access credential for new employee
-    When admin enter "Tony", "" and "Sony"
+    When admin enter "Bony", "" and "Sony"
     When admin check Create Login Details box
     Then admin sees clear rule message about password
-    When admin set "TralaLAla", "Synt@xBatch29%", "Synt@xBatch29%" as user credentials
+    When admin set "TralaLAlla", "Synt@xBatch#29%", "Synt@xBatch#29%" as user credentials
     When admin make sure status is enabled
     When admin click save button
     Then admin ends on "Personal Details" page
     Then the system should automatically generate employee ID
     Then admin logs out
-    Then employee shall be able to login with "TralaLAla", "Synt@xBatch29%" and get "Welcome Tony" message
+    Then employee shall be able to login with "TralaLAlla", "Synt@xBatch#29%" and get "Welcome Bony" message
 
   @regression @negative_test
   Scenario:Admin ensures password and re-enter password must be a match
@@ -40,13 +40,13 @@ Feature: Creating Login details in HRMS Application
     Then admin gets an error message "Required"
 
   @regression @negative_test @thirdOption
-  Scenario: Admin Cannot Create Login Credential while Status is Disabled
-    When admin enter "Antoaneta", "" and "Jane"
+  Scenario:Admin creating login credentials with disabled employee status
+    When admin enter "Mariana", "" and "Jane"
     When admin check Create Login Details box
     Then admin sees clear rule message about password
-    When admin set "Moxy%Poxy", "Synt@xToch#266", "Synt@xToch#266" as user credentials
+    When admin set "Moxy%Poxiy", "Synt@xToch#268", "Synt@xToch#268" as user credentials
     Then admin set Status as Disabled
     When admin click save button
     Then admin logs out
-    Then employee shall not be able to login using "Moxy%Poxy", "Synt@xToch#266" as credentials
+    Then employee shall not be able to login using "Moxy%Poxiy", "Synt@xToch#268" as credentials
     And employee will get "Account disabled" error message

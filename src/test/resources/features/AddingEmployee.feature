@@ -1,7 +1,7 @@
 Feature: Adding an Employee to the HRMS Application
 
   Background:
-    Given the user is on the login page
+    ##Given the user is on the login page
     When the user enters valid admin credentials
     And the user clicks the login button
     Then the user should be redirected to the admin "dashboard" page
@@ -18,7 +18,7 @@ Feature: Adding an Employee to the HRMS Application
   @regression @positive_test @add_employee
   Scenario: Add an employee with a provided employee ID
     When the user enters "Jane", "", "Smith" as employee details
-    And the user provides "EMP12345" as the employee ID
+    And the user provides "EMP13345" as the employee ID
     And the user clicks the save button
     Then the system should save the employee with the provided ID
     And the employee record should be saved in the database

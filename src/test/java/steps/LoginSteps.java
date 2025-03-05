@@ -14,7 +14,6 @@ import java.time.Duration;
 public class LoginSteps extends CommonMethods {
 
 
-
     @When("the user enters invalid username and valid password")
     public void the_user_enters_invalid_username_and_valid_password() {
         sentText("NotAdmin", loginPage.loginUsernameField);
